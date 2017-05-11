@@ -1,0 +1,21 @@
+<%= simple_form_for([:admin,@inscrito]) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.file_field :foto %>
+  <%= f.input :nome %>
+  <%= f.input :endereco %>
+  <%= f.input :complemento %>
+  <%= f.input :bairro %>
+  <%= f.input :cidade %>
+  <%= f.input :estado, collection: @estados, prompt: 'Selecione o estado' %>
+  <%= f.input :cep %>
+  <%= f.input :fone %>
+  <%= f.input :celular %>
+  <%= f.input :email %>
+  <%= f.input :grupo_id, collection: @grupos, prompt: 'Selecione o grupo' %>
+  
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

@@ -1,0 +1,52 @@
+<div>
+	<div class="col-xs-12"><h3>Grupos de trabalhos (GT)</h3></div>
+</div>
+<% qtd=0 %>
+<ul class="nav nav-tabs" id="myTabs" role="tablist">
+	<% @grupos.each do |grupo| %>
+		<% objName = grupo.name.remove(" ").downcase %>
+		<li role="presentation" class="<%= 'active' if qtd==0 %>">
+			<a href="#<%= objName %>" id="<%= objName %>-tab" role="tab" data-toggle="tab" aria-controls="<%= objName %>" aria-expanded="true"><%= grupo.nome %></a>
+		</li>
+		<% qtd = qtd + 1 %>
+	<% end %>
+</ul>
+<br/>
+<% qtd=0 %>
+<div class="tab-content" id="myTabContent"> 
+	<% @grupos.each do |grupo| %>
+		<% objName = grupo.name.remove(" ").downcase %>
+		<div class="tab-pane fade <%= 'active in' if qtd==0 %>" role="tabpanel" id="<%= objName %>" aria-labelledby="<%= objName %>-tab"> 
+		<% qtd = qtd + 1 %>
+		<% grupo.inscritos.order(nome: :asc).each do |inscrito| %>
+			<div class="media"> 
+				<div class="media-left"> 
+					<%= image_tag inscrito.foto.url(:thumb) %>
+				</div> 
+				<div class="media-body"> 
+
+		      <h4 class="media-heading"><%= inscrito.nome %></h4>
+		      <div class="row">
+		        <div class="col-sm-12">
+		          Grupo: <%= inscrito.grupo.nome %>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="col-sm-12">
+		          Estado: <%= inscrito.estado %>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="col-sm-6 col-md-3">
+		          Fone: <%= inscrito.fone %>
+		        </div>
+		        <div class="col-sm-6 col-md-3">
+		          Celular: <%= inscrito.celular %>
+		        </div>
+		      </div>
+				</div> 
+			</div>
+		<% end %>
+		</div> 
+	<% end %>
+</div>

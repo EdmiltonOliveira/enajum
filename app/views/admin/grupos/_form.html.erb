@@ -1,0 +1,18 @@
+<%= simple_form_for([:admin,@grupo]) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :nome %>
+  <h4>Respostas</h4>
+  <div id="respostas">
+		<%= f.simple_fields_for :respostas do |resposta| %>
+			<%= render 'resposta_fields', f: resposta %>
+	  <% end %>
+	  <div class="links">
+	  	<%= link_to_add_association 'Add Resposta', f, :respostas %>
+	  </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

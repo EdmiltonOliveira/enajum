@@ -1,0 +1,21 @@
+<table class="prog-table">
+	
+	<tr><td class="col-xs-12 prog-titulo">PALESTRANTES</td></tr>
+	<tr><td class="col-xs-12 prog-sub"></td></tr>
+	
+	<% @palestrantes.each do |palestrante| %>
+	
+		<tr><td class="col-xs-12 prog-sub"><%= palestrante.nome %></td></tr>
+		<% if palestrante.instituicao %>
+			<tr><td class="col-xs-12"><%= palestrante.instituicao %></td></tr>
+		<% end %>
+		<% if palestrante.email %>
+			<tr><td class="col-xs-12"><%= palestrante.email %></td></tr>
+		<% end %>
+		<% if palestrante.telefones %>
+			<tr><td class="col-xs-12"><%= palestrante.telefones %></td></tr>
+		<% end %>
+		<tr><td class="col-xs-12 prog-sub"></td></tr>
+
+	<% end %>
+</table>

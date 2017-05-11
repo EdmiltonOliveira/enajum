@@ -1,0 +1,18 @@
+<div class="row" style="margin-bottom: 20px;">
+	<div class="col-xs-12" style="text-align: center;">
+		<h3 style="font-weight:bold; font-size:30px;">
+			Fotos do Encontro
+		</h3>
+	</div>
+</div>
+
+<ul class="gallery row first">
+	<% @fotos.each do |foto| %>
+  	<li>
+  		<%= image_tag foto.foto.url(:medium) %>
+  		<% if foto.descricao %>
+      	<p class="text"><%= foto.descricao %></p>
+      <% end %>
+   </li>
+	<% end %>
+</ul>

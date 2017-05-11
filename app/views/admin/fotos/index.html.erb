@@ -1,0 +1,27 @@
+<h2 class="titulo">Fotos</h2>
+
+<div class="row">
+  <div class="col-xs-12" style="text-align: right;">
+    <%= link_to new_admin_foto_path, class: "btn btn-default btn-xs" do %>
+      <i class="fa fa-plus" aria-hidden="true"></i> Nova Foto
+    <% end %>
+  </div>
+</div>
+
+
+<ul class="gallery row first">
+  <% @fotos.each do |foto| %>
+    <li>
+      <%= image_tag foto.foto.url(:medium) %>
+      <% if foto.descricao %>
+        <p class="text">
+          <%= foto.descricao %>
+        </p>
+        <div>
+        <%= link_to_edit edit_admin_foto_path(foto), true %>
+        <%= link_to_destroy [:admin,foto],true %>
+        </div>
+      <% end %>
+   </li>
+  <% end %>
+</ul>

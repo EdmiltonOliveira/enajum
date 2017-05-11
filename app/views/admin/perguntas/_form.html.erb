@@ -1,0 +1,9 @@
+<%= simple_form_for([:admin,@pergunta]) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :pergunta %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

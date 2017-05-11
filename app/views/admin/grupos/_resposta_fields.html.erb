@@ -1,0 +1,5 @@
+<div class=nested-fields>
+	<%= f.input :pergunta_id, collection: Pergunta.all %>
+	<%= f.input :resposta %>
+	<%= link_to_remove_association "remove resposta", f %>
+</div>

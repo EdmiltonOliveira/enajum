@@ -1,0 +1,36 @@
+<h2 class="titulo">Palestrantes</h2>
+
+<div class="row">
+  <div class="col-xs-12" style="text-align: right;">
+    <%= link_to new_admin_palestrante_path, class: "btn btn-default btn-xs" do %>
+      <i class="fa fa-plus" aria-hidden="true"></i> Novo Palestrante
+    <% end %>
+  </div>
+</div>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Telefones</th>
+      <th>Email</th>
+      <th>Instituicao</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @palestrantes.each do |palestrante| %>
+      <tr>
+        <td><%= palestrante.nome %></td>
+        <td><%= palestrante.telefones %></td>
+        <td><%= palestrante.email %></td>
+        <td><%= palestrante.instituicao %></td>
+        <td class="table-link"><%= link_to_edit edit_admin_palestrante_path(palestrante) %></td>
+        <td class="table-link"><%= link_to_destroy [:admin,palestrante]%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,20 @@
+<%= form_for [:admin,@inscrito] do |f| %>
+	<input type="hidden" name="cropping" value="ok">
+	<div class="row">
+		<div class="col-xs-12">
+  		<%= f.cropbox :foto, :width => 300 %>
+		</div>
+	</div>
+	<br/><br/>
+	<div class="row">
+		<div class="col-sm-12">
+  		<%= f.crop_preview :foto, :width => 100 %>
+		</div>
+	</div>
+	<br/><br/>
+	<div class="row">
+		<div class="col-sm-12">
+  			<%= f.submit 'Salvar Foto' %>
+		</div>
+	</div>
+<% end %>

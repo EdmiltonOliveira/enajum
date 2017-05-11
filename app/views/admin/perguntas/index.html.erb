@@ -1,0 +1,30 @@
+<h2 class="titulo">Perguntas</h2>
+
+<div class="row">
+  <div class="col-xs-12" style="text-align: right;">
+    <%= link_to new_admin_pergunta_path, class: "btn btn-default btn-xs" do %>
+      <i class="fa fa-plus" aria-hidden="true"></i> Nova Pergunta
+    <% end %>
+  </div>
+</div>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Pergunta</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @perguntas.each do |pergunta| %>
+      <tr>
+        <td><%= pergunta.id %></td>
+        <td><%= pergunta.pergunta %></td>
+        <td class="table-link"><%= link_to_edit edit_admin_pergunta_path(pergunta) %></td>
+        <td class="table-link"><%= link_to_destroy [:admin,pergunta]%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

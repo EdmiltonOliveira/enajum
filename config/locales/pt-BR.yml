@@ -1,0 +1,26 @@
+pt-BR:
+  helpers:
+    submit:
+      create: "Criar %{model}"
+      update: "Atualizar %{model}"
+  activerecord:
+    models:
+      inscrito:
+        one: Inscrição
+        other: Inscrições
+  will_paginate:
+    previous_label: "&#8592; Anterior"
+    next_label: "Próximo &#8594;"
+    page_gap: "&hellip;"
+    page_entries_info:
+      single_page:
+        zero:  "Nenhum registro encontrado"
+        one:   "Apresentando 1 %{model}"
+        other: "Apresentando tods %{count} %{model}"
+      single_page_html:
+        zero:  "Nenhum registro encontrado"
+        one:   "Apresentando <b>1</b> %{model}"
+        other: "Apresentando <b>all&nbsp;%{count}</b> %{model}"
+
+      multi_page: "Apresentando %{model} de %{from} até %{to} do total %{count} no total"
+      multi_page_html: "Registros de <b>%{from}&nbsp;</b>até<b>&nbsp;%{to}</b>&nbsp;-&nbsp;Totalizando <b>%{count}</b> registros"    

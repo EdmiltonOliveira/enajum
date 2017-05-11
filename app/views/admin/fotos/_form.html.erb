@@ -1,0 +1,10 @@
+<%= simple_form_for([:admin,@foto]) do |f| %>
+
+  <%= f.input :descricao %>
+  
+  <%= f.file_field :foto %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

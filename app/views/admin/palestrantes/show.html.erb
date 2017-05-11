@@ -1,0 +1,22 @@
+<p>
+  <strong>Nome:</strong>
+  <%= @admin_palestrante.nome %>
+</p>
+
+<p>
+  <strong>Telefones:</strong>
+  <%= @admin_palestrante.telefones %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @admin_palestrante.email %>
+</p>
+
+<p>
+  <strong>Instituicao:</strong>
+  <%= @admin_palestrante.instituicao %>
+</p>
+
+<%= link_to 'Edit', edit_admin_palestrante_path(@admin_palestrante) %> |
+<%= link_to 'Back', admin_palestrantes_path %>

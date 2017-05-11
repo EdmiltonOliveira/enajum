@@ -1,0 +1,73 @@
+<h2 class="titulo">Inscrição</h2>
+<div class="row">
+
+<div class="row">
+  <div class="col-xs-12" style="text-align: center;">
+    <%= pagination @inscritos %><br/>
+    <%= page_entries_info @inscritos %>    
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12" style="text-align: right;">
+    <%= link_to new_admin_inscrito_path, class: "btn btn-default btn-xs" do %>
+      <i class="fa fa-plus" aria-hidden="true"></i> Nova Inscrição
+    <% end %>
+  </div>
+</div>
+
+<% @inscritos.each do |inscrito| %>
+  <div class="media bottom-line" style="font-size: 85%;">
+    <div class="media-left">
+      <a href="#">
+        <%= image_tag inscrito.foto.url(:thumb), class: "media-object", alt: inscrito.nome %>
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= inscrito.nome %></h4>
+        <div class="row">
+          <div class="col-sm-12">
+            Grupo: <%= inscrito.grupo.nome %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            Estado: <%= inscrito.estado %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-md-3">
+            Fone: <%= inscrito.fone %>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            Celular: <%= inscrito.celular %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            email: <%= inscrito.email %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-md-2">
+            <%= link_to_show([:admin,inscrito],true) %>
+          </div>
+          <div class="col-sm-4 col-md-2">
+            <%= link_to_edit(edit_admin_inscrito_path(inscrito),true) %>
+          </div>
+          <div class="col-sm-4 col-md-2">
+            <%= link_to_destroy([:admin,inscrito],true) %>
+          </div>
+        </div>
+    </div>
+  </div>
+<% end %>
+<br/>
+<div class="row">
+  <div class="col-sm-12" style="text-align: center">
+    <%= pagination @inscritos %>
+  </div>
+</div>
+
+<br>
+

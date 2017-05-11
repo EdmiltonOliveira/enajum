@@ -1,0 +1,31 @@
+<h2 class="titulo">Visualizando Grupo</h2>
+
+<div class="row">
+  <div class="col-md-12" style="text-align: right;">
+    <%= link_to edit_admin_grupo_path(@grupo), class: "btn btn-default" do %>
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar
+    <% end %>
+    <%= link_to admin_grupos_path, class: "btn btn-default" do %>
+      <i class="fa fa-chevron-left" aria-hidden="true"></i> Retornar
+    <% end %>
+  </div>
+</div>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @grupo.nome %>
+</p>
+<br/>
+
+<h4>Perguntas/Respostas</h4>
+
+<% @grupo.respostas.each do |resposta| %>
+<div class="row">
+  <div class="col-xs-12" style="font-weight: bold;"><%= resposta.pergunta.pergunta %></div>
+  <div class="col-xs-12">
+    <ul>
+      <li>Resp: <%= resposta.resposta %></li>
+    </ul>
+  </div>
+</div>
+<% end %>
