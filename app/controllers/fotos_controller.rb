@@ -1,5 +1,5 @@
 class FotosController < ApplicationController
   def index
-  	@fotos = Admin::Foto.all
+  	@fotos = Foto.all
   end
 end

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    resources :home, only: [:index]
+  end
+
+  namespace :admin do
     resources :perguntas, except: [:show]
   end
 

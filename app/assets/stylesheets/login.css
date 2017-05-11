@@ -6,39 +6,39 @@
  * General styles
  */
 
-body, html{
-     height: 100%;
- 	background-repeat: no-repeat;
-    background-color: #2b3e50;
+//body, html{
+//     height: 100%;
+ 	//background-repeat: no-repeat;
+    //background-color: #2b3e50;
 // 	background-color: #d3d3d3;
- 	font-family: 'Oxygen', sans-serif;
-}
+ 	//font-family: 'Oxygen', sans-serif;
+//}
 
 .main{
- 	margin-top: 70px;
+ 	margin-top: 0px;
 }
 
-h1.title { 
+.main-login h1.title { 
 	font-size: 50px;
 	font-family: 'Passion One', cursive; 
 	font-weight: 400; 
 }
 
-hr{
+.main-login hr{
 	width: 10%;
 	color: #fff;
 }
 
-.form-group{
+.main-login .form-group{
 	margin-bottom: 15px;
 }
 
-label{
+.main-login label{
 	margin-bottom: 15px;
 }
 
-input,
-input::-webkit-input-placeholder {
+.main-login input,
+.main-login input::-webkit-input-placeholder {
     font-size: 11px;
     padding-top: 3px;
 }
@@ -73,7 +73,7 @@ input::-webkit-input-placeholder {
 	text-align: center;
 }
 
-.input-group-addon {
+.main-login .input-group-addon {
     color: #2b3e50;
     background-color: #ffffff;
  }
