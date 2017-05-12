@@ -85,4 +85,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.zoho.com',
+    port:                 587,
+    domain:               'enajum.com.br',
+    user_name:            'enajum@enajum.com.br',
+    password:             'mari100908',
+    authentication:       :plain,
+    enable_starttls_auto: true
+  }
+  
+  config.action_mailer.default_url_options = { :host => 'enajum.com.br' }    
 end

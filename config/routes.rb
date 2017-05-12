@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get '/', :to => 'home#index'
+  end
+
+  namespace :admin do
     resources :home, only: [:index]
   end
 

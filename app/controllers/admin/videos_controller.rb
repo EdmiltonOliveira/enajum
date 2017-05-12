@@ -1,4 +1,4 @@
-class Admin::VideosController < ApplicationController
+class Admin::VideosController < Admin::ApplicationController
   before_action :set_admin_video, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/videos

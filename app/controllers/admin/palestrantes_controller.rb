@@ -1,4 +1,4 @@
-class Admin::PalestrantesController < ApplicationController
+class Admin::PalestrantesController < Admin::ApplicationController
   before_action :set_palestrante, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/palestrantes

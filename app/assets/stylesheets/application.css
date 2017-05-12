@@ -17,6 +17,7 @@
  *= require jquery.jcrop
  *= require bootstrap-select.min
  *= require pagination
+ *= require login
  *= require_self
  */
 

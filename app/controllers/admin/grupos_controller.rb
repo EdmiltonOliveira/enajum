@@ -1,4 +1,4 @@
-class Admin::GruposController < ApplicationController
+class Admin::GruposController < Admin::ApplicationController
   before_action :set_grupo, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/grupos

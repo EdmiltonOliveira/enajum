@@ -28,7 +28,7 @@
 #
 
 class Inscrito < ApplicationRecord
-	before_create :SelecionaGrupo
+	before_create :selecionaGrupo
 	belongs_to :grupo
 	
 	has_attached_file :foto, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/:style/missing.png"
@@ -36,7 +36,7 @@ class Inscrito < ApplicationRecord
 	crop_attached_file :foto
 
 
-	def SelecionaGrupo
+	def selecionaGrupo
 		gt = Grupo.order(:quantidade).first
 		self.grupo = gt
 		gt.quantidade = gt.quantidade + 1

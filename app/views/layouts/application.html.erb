@@ -21,7 +21,7 @@
 		<div class="bs-navmenu-offcanvas">
       <div id="myNavmenuCanvas">
         <% if controller_admin %>
-          <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+          <nav id="myNavmenu" class="navmenu navmenu-inverse navmenu-fixed-left offcanvas" role="navigation">
             <a class="navmenu-brand" href="#">MENU</a>
             <ul class="nav navmenu-nav">
               <li><%= link_to 'Inscrição',admin_inscritos_path %></li>
@@ -34,7 +34,7 @@
             </ul>
           </nav>
         <% else %>
-          <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+          <nav id="myNavmenu" class="navmenu navmenu-inverse navmenu-fixed-left offcanvas" role="navigation">
             <a class="navmenu-brand" href="#">MENU</a>
             <ul class="nav navmenu-nav">
   						<li class="dropdown-header">O Evento</li>
@@ -48,18 +48,17 @@
               <li><%= link_to 'Inscritos',inscritos_path %></li>
               <li class="dropdown-header">Mais opções</li>
               <% if current_user.admin %>
-                <li><%= link_to 'Administração',admin_home_index_path %></li>
+                <li><%= link_to 'Administração',admin_path %></li>
               <% end %>
               <li><%= link_to 'Sair',destroy_user_session_path, method: :delete %></li>
             </ul>
           </nav>
         <% end %>
         <% if controller_admin %>
-          <% navClass='navbar-inverse' %>
+        <div class="navbar navbar-inverse navbar-fixed-top">
         <% else %>
-          <% navClass='navbar-default' %>
+        <div class="navbar navbar-default navbar-fixed-top">
         <% end %>
-        <div class="navbar <% navClass %> navbar-fixed-top">
           <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="#myNavmenuCanvas" data-placement="left">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>

@@ -1,4 +1,4 @@
-class Admin::InscritosController < ApplicationController
+class Admin::InscritosController < Admin::ApplicationController
   before_action :set_inscrito, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/inscritos
@@ -31,6 +31,7 @@ class Admin::InscritosController < ApplicationController
     @inscrito = Inscrito.new(inscrito_params)
 
     if @inscrito.save
+      testar_email
       flash[:notice] = "Inscrição efetuada com sucesso."
       if inscrito_params[:foto].blank?
         redirect_to [:admin,@inscrito]
@@ -47,6 +48,7 @@ class Admin::InscritosController < ApplicationController
   # PATCH/PUT /admin/inscritos/1.json
   def update
     if @inscrito.update_attributes(inscrito_params)
+      testar_email
       flash[:notice] = "Inscrição atualizada com sucesso."
       if inscrito_params[:foto].blank?
         redirect_to [:admin,@inscrito]
@@ -78,6 +80,14 @@ class Admin::InscritosController < ApplicationController
   end
 
   private
+
+    def testar_email
+      if inscrito_params[:email].length>10 && User.find_by_email(inscrito_params[:email]).nil?
+        generated_password = Devise.friendly_token.first(8)
+        user = User.create!(:email => inscrito_params[:email], :admin => false, :password => generated_password)
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_inscrito
       @inscrito = Inscrito.find(params[:id])
@@ -86,6 +96,7 @@ class Admin::InscritosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def inscrito_params
       params.require(:inscrito).permit(:nome, :email, :endereco, :complemento, :bairro, :cidade, :estado, :cep, :fone, :celular, :foto,
+          :grupo, :grupo_id,
           :foto, 
           :foto_original_w, 
           :foto_original_h,

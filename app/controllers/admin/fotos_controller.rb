@@ -1,4 +1,4 @@
-class Admin::FotosController < ApplicationController
+class Admin::FotosController < Admin::ApplicationController
   before_action :set_foto, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/fotos
